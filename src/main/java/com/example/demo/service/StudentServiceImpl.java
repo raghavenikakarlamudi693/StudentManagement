@@ -1,5 +1,6 @@
 package com.example.demo.service;
 import java.util.ArrayList;
+
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,6 +10,7 @@ import org.springframework.stereotype.Service;
 import com.example.demo.repository.StudentRepository;
 import com.example.demo.dto.StudentRequest;
 import com.example.demo.dto.StudentResponse;
+import com.example.demo.exception.StudentNotFoundException;
 import com.example.demo.model.Student;
 
 @Service
@@ -34,7 +36,7 @@ public class StudentServiceImpl implements StudentService{
 	@Override
 	public StudentResponse getStudentById(Long id)
 	{
-		Student student = studentRepository.findById(id).orElseThrow(()-> new RuntimeException("Student not found with id:"+id));
+		Student student = studentRepository.findById(id).orElseThrow(()-> new StudentNotFoundException("Student not found with id:"+id));
 	    return mapToResponse(student);
 	}
 	private StudentResponse mapToResponse(Student student)
@@ -67,7 +69,7 @@ public class StudentServiceImpl implements StudentService{
 	public StudentResponse updateStudent(Long id, StudentRequest request)
 	{
 		Student existingStudent = studentRepository.findById(id)
-	            .orElseThrow(() -> new RuntimeException(
+	            .orElseThrow(() -> new StudentNotFoundException(
 	                    "Student not found with id: " + id));
 	
 		existingStudent.setName(request.getName());
@@ -81,7 +83,7 @@ public class StudentServiceImpl implements StudentService{
 	@Override 
 	public void deleteStudent(Long id)
 	{
-		Student student = studentRepository.findById(id).orElseThrow(()-> new RuntimeException("Student not found with id:"+id));
+		Student student = studentRepository.findById(id).orElseThrow(()-> new StudentNotFoundException("Student not found with id:"+id));
 		studentRepository.deleteById(id);
 	}
 	
