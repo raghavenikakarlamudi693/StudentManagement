@@ -1,26 +1,27 @@
-HELP.md
+# Maven
 target/
-.mvn/wrapper/maven-wrapper.jar
-!**/src/main/**/target/
-!**/src/test/**/target/
 
-### STS ###
-.apt_generated
+# IDE files
 .classpath
-.factorypath
 .project
-.settings
-.springBeans
-.sts4-cache
-
-### IntelliJ IDEA ###
-.idea
-*.iws
+.settings/
+.idea/
 *.iml
-*.ipr
+.vscode/
 
-### NetBeans ###
-/nbproject/private/
+# Logs
+*.log
+logs/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Spring Boot config (DO NOT COMMIT SECRETS)
+application.properties
+application.yml
+application-dev.properties
+
 /nbbuild/
 /dist/
 /nbdist/
