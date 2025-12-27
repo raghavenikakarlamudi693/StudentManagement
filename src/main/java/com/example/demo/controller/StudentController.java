@@ -60,5 +60,10 @@ public class StudentController {
 		studentService.deleteStudent(id);
 		return "Student deleted successfully with id:"+id;
 	}
+	
+	@GetMapping("/public")
+    public String publicApi() {
+        return "Public API - No Authentication Required";
+    }
 
 }
