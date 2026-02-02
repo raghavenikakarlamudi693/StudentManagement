@@ -44,7 +44,7 @@ public class StudentServiceImpl implements StudentService{
 		StudentResponse response = new StudentResponse();
 		response.setId(student.getId());
 		response.setName(student.getName());
-		response.setBranch(student.getBranch());
+		response.setDepartment(student.getDepartment());
 		response.setGender(student.getGender());
 		return response;
 		
@@ -56,7 +56,7 @@ public class StudentServiceImpl implements StudentService{
 		// TODO Auto-generated method stub
 		Student student = new Student();
 	    student.setName(request.getName());
-	    student.setBranch(request.getBranch());
+	    student.setDepartment(request.getDepartment());
 	    student.setGender(request.getGender());
 
 	    // 🔑 IMPORTANT: use returned entity
@@ -73,7 +73,7 @@ public class StudentServiceImpl implements StudentService{
 	                    "Student not found with id: " + id));
 	
 		existingStudent.setName(request.getName());
-		existingStudent.setBranch(request.getBranch());
+		existingStudent.setDepartment(request.getDepartment());
 		existingStudent.setGender(request.getGender());
 	    
 	    Student updatedStudent = studentRepository.save(existingStudent);

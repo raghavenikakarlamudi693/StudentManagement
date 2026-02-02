@@ -1,9 +1,10 @@
 package com.example.demo.dto;
+import com.example.demo.model.Department;
 
 public class StudentResponse {
 	private Long id;
 	private String name;
-	private String branch;
+	private Department department;
 	private String gender;
 	public StudentResponse() {
 		super();
@@ -21,11 +22,11 @@ public class StudentResponse {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public String getBranch() {
-		return branch;
+	public Department getDepartment() {
+		return department;
 	}
-	public void setBranch(String branch) {
-		this.branch = branch;
+	public void setDepartment(Department department) {
+		this.department = department;
 	}
 	public String getGender() {
 		return gender;
