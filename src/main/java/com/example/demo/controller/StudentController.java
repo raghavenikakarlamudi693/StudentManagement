@@ -24,12 +24,12 @@ import com.example.demo.service.StudentService;
 @RequestMapping("/api/student")
 public class StudentController {
 
-    
+	private final  StudentService studentService;
 
-	@Autowired
-	private StudentService studentService;
-
-  
+  public StudentController(StudentService studentService)
+  {
+	  this.studentService=studentService;
+  }
 	
 	@GetMapping
 	public List<StudentResponse> getAllStudents()
