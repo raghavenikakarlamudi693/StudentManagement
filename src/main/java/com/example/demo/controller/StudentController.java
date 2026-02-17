@@ -52,7 +52,9 @@ public class StudentController {
 	@PutMapping("/{id}")
 	public StudentResponse updateStudentById(@PathVariable Long id, @RequestBody StudentRequest request)
 	{
+		System.err.println("Updating student is:"+id);
 		return studentService.updateStudent(id,request);
+		
 	}
 	@DeleteMapping("/{id}")
 	public String deleteStudentById(@PathVariable Long id)

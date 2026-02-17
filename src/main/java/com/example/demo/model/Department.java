@@ -13,16 +13,16 @@ public class Department {
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private long deptId;
+	private Long deptId;
 	
 	@Column(name="dept_name")
 	private String deptName;
 
-	public long getDeptId() {
+	public Long getDeptId() {
 		return deptId;
 	}
 
-	public void setDeptId(long deptId) {
+	public void setDeptId(Long deptId) {
 		this.deptId = deptId;
 	}
 

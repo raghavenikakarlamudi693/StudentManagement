@@ -28,13 +28,18 @@ public class Student {
 	@JsonIgnoreProperties({"hibernateLazyInitializer","handler"})
 	private Department department;
 	
-		public Department getDepartment() {
+	
+				@Override
+	public String toString() {
+		return "Student [id=" + id + ", name=" + name + ", gender=" + gender + ", department=" + department + "]";
+	}
+				public Department getDepartment() {
 		return department;
 	}
 	public void setDepartment(Department department) {
 		this.department = department;
 	}
-		public String getName() {
+				public String getName() {
 		return name;
 	}
 	public void setName(String name) {
@@ -57,18 +62,15 @@ public class Student {
 	public Student(String name, Department department, String gender) {
 		super();
 		this.name = name;
-		this.department = department;
+		
 		this.gender = gender;
 	}
 	public Student() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
+	
 
-	@Override
-	public String toString() {
-		return "Students [id=" + id + ", name=" + name + ", department=" + department + ", gender=" + gender + "]";
-	}
 	
 
 }

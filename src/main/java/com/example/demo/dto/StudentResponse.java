@@ -4,7 +4,20 @@ import com.example.demo.model.Department;
 public class StudentResponse {
 	private Long id;
 	private String name;
-	private Department department;
+	private Long deptId;
+	private String deptName;
+	public String getDeptName() {
+		return deptName;
+	}
+	public void setDeptName(String deptName) {
+		this.deptName = deptName;
+	}
+	public Long getDeptId() {
+		return deptId;
+	}
+	public void setDeptId(Long deptId) {
+		this.deptId = deptId;
+	}
 	private String gender;
 	public StudentResponse() {
 		super();
@@ -22,12 +35,7 @@ public class StudentResponse {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public Department getDepartment() {
-		return department;
-	}
-	public void setDepartment(Department department) {
-		this.department = department;
-	}
+	
 	public String getGender() {
 		return gender;
 	}
