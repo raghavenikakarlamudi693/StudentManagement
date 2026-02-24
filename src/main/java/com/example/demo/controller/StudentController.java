@@ -20,6 +20,8 @@ import com.example.demo.model.Student;
 
 import com.example.demo.service.StudentService;
 
+import jakarta.validation.Valid;
+
 @RestController
 @RequestMapping("/api/student")
 public class StudentController {
@@ -44,7 +46,7 @@ public class StudentController {
 	}
 	
 	@PostMapping
-	public StudentResponse saveStudents(@RequestBody StudentRequest request)
+	public StudentResponse saveStudents(@Valid @RequestBody StudentRequest request)
 	{
 
 		return studentService.saveStudent(request);

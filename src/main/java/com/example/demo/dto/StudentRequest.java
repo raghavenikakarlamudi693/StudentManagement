@@ -1,8 +1,14 @@
 package com.example.demo.dto;
 import com.example.demo.model.Department;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Size;
+
 
 public class StudentRequest {
+	@NotNull (message = "Name should not be null")
+	@Size(min=3, message = "Name should have atleast 3 characters")
 	private String name;
+	
 	private Long deptId;
 	private String deptName;
 	
